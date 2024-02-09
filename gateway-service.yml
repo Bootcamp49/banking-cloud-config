@@ -21,7 +21,6 @@ spring:
           uri: lb://client-service
           predicates:
             - Path=/api/client/*
-            - Query=clientId
           filters:
             - StripPrefix=2
           
