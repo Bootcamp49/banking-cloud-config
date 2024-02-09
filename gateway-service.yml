@@ -23,5 +23,3 @@ spring:
             - Path=/api/client/*
           filters:
             - StripPrefix=2
-          
-
