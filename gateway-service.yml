@@ -1,25 +1,25 @@
-server:
+server: 
   port: ${port:0}
   error:
-    whitelabel:
+    whitelabel: 
       enabled: true
-eureka:
-  client:
-    serviceUrl:
+eureka: 
+  client: 
+    serviceUrl: 
       defaultZone: http://localhost:8085/eureka/
-  instance:
+  instance: 
     hostname: localhost
-    instance-id:
-      ${spring.application.name}:${spring.application.instance_id:${random.value}}  
-spring:
-  application:
+    instance-id: 
+      ${spring.application.name}:${spring.application.instance_id:${random.value}}
+spring: 
+  application: 
     name: gateway-service
-  cloud:
-    gateway:
-      routes:
+  cloud: 
+    gateway: 
+      routes: 
         - id: client-service
           uri: lb://client-service
-          predicates:
-            - Path=/api/client/*
-          filters:
+          predicates: 
+            - Path=/api/cli/*
+          filters: 
             - StripPrefix=2
