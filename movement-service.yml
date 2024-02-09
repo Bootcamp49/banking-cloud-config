@@ -1,5 +1,12 @@
 server:
-  port: 8082
+  port: ${port:0}
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8085/eureka/
+  instance:
+    hostname: localhost
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 spring:
   data:
     mongodb:
