@@ -33,6 +33,5 @@ spring:
           uri: lb://movement-service
           predicates: 
             - Path=/api/movement,/api/movement/**
-            # - Query=productTypeId,productsId
           filters: 
             - StripPrefix=2
