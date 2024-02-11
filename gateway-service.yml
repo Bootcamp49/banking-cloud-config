@@ -27,7 +27,7 @@ spring:
           uri: lb://product-service
           predicates:
             - Path=/api/products/active,/api/products/active/*,/api/products/active/{id},/api/products/active/client/{clientId},/api/products/active/consumecredit/{id},/api/products/active/paycredit/{id},/api/products/active/transfer/{originId},/api/products/active/report/commission/{productId},/api/products/active/report/movements/{productId},/api/products/active/report/creditcard/movements/{cardNumber}
-            - Path=/api/products/pasive,/api/products/pasive/**,/api/products/pasive/report/**,/api/products/pasive/debitcard/**
+            # - Path=/api/products/pasive,/api/products/pasive/**,/api/products/pasive/report/**,/api/products/pasive/debitcard/**
           filters:
             - StripPrefix=2
         # - id: movement-service
