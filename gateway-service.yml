@@ -35,3 +35,9 @@ spring:
             - Path=/api/movement,/api/movement/**
           filters: 
             - StripPrefix=2
+        - id: yankee-server
+          uri: lb://yankee-server
+          predicates:
+            - Path=/api/yankee/**
+          filters:
+            - StripPrefix=2
