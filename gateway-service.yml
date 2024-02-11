@@ -20,6 +20,18 @@ spring:
         - id: client-service
           uri: lb://client-service
           predicates: 
-            - Path=/api/clients/v1,/api/clients/v1/*,/api/clients/v1/{id},/api/clients/v1/VIP/{clientId},/api/clients/v1/MYPE/{clientId}
+            - Path=/api/clients/v1,/api/clients/v1/*,/api/clients/v1/{id},/api/clients/v1/VIP/{clientId},/api/clients/v1/MYPE/{clientId},/api/clients/v1/report/{clientId}/products
           filters: 
             - StripPrefix=3
+        - id: product-service
+          uri: lb://product-service
+          predicates:
+            - Path=/api/products/active,/api/products/active/*,/api/products/pasive,/api/products/pasive/*
+          filters:
+            - StripPrefix=2
+        # - id: movement-service
+        #   uri: lb://movement-service
+        #   predicates: 
+        #     - Path=
+        #   filters: 
+        #     - StripPrefix=2
