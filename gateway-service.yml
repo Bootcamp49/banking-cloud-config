@@ -20,7 +20,7 @@ spring:
         - id: client-service
           uri: lb://client-service
           predicates: 
-            - Path=/api/clients/v1,/api/clients/v1/*,/api/clients/v1/{id},/api/clients/v1/VIP/{clientId},/api/clients/v1/MYPE/{clientId},/api/clients/v1/report/{clientId}/products
+            - Path=/api/clients/v1,/api/clients/v1/*,/api/clients/v1/{id},/api/clients/v1/VIP/{clientId},/api/clients/v1/PYME/{clientId},/api/clients/v1/report/{clientId}/products
           filters: 
             - StripPrefix=3
         - id: product-service
