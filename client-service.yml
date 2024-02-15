@@ -23,6 +23,11 @@ spring:
           json:
             trusted:
               packages: "*"
+reactive:
+  feign:
+    circuit: 
+    breaker: 
+      enabled: false
 resilience4j:
   circuitbreaker:
     configs:
